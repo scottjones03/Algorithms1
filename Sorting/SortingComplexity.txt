@@ -1,0 +1,19 @@
+All sorting methods must do the following:
+
+    When we only allow pairwise comparisons between individual terms
+    and we don't know other priors about the items to be sorted:
+    
+    Assertion 1 (lower bound on exchanges). 
+        If there are n items in an array, then Θ(n) exchanges always suffice to put the items in order. 
+        In the worst case, Θ(n) exchanges are actually needed.
+        This is sufficient, but not necessary because it is possible to swap items in a way that unsorts them
+
+    (Proof. Identify the smallest item present: if it is not already in the right place, one exchange moves it to the start of the array. A second exchange moves the next smallest item to place, and so on. After at worst n − 1 exchanges, the items are all in order. The bound is n − 1 rather than n because at the very last stage the biggest item has to be in its right place without need for a swap—but that level of detail is unimportant to Θ notation.)
+
+    Assertion 2 (lower bound on comparisons). 
+        Sorting by pairwise comparison, 
+        assuming that all possible arrangements of the data might actually occur as input, necessarily 
+        costs at least Ω(n lg n) comparisons.
+
+    (Proof. There are n! permutations of n items, so we need at least
+    log2(n!) binary tests and n! is approx n^n so it is about nlgn)

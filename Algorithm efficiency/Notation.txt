@@ -1,0 +1,33 @@
+f(n) is a subset of O(g(n)) for sufficiently large n 
+    -> 0 <= f(n) <= k*g(n) for some constant k > 0
+
+f(n) is a subset of o(g(n)) for sufficiently large n
+    -> "0 <= f(n) < k*g(n )" informally
+    -> holds for all constants k > 0
+    Why informally:
+        let g(n) = n^2,
+            "0<=f(3n^2)<k*n^2" then 3<k and N>1
+
+f(n) ∈ O(g(n)) ⇐⇒ ∃k,N >0 s.t. ∀n>N : 0≤f(n)≤k·g(n).
+f(n) ∈ Θ(g(n)) ⇐⇒ ∃k1,k2, N >0 s.t. ∀n>N : 0≤k1 ·g(n)≤f(n)≤k2 ·g(n).
+f(n) ∈ o(g(n)) ⇐⇒ ∀ε>0 : ∃N >0 s.t. ∀n>N : 0≤f(n)≤ε·g(n)
+
+∀ = Any , ∃ = Some
+
+most fundamental thing to understand about logarithms 
+is that logb(n) is the number of digits of n when 
+you write n down in base b. 
+    -> ie let logb(n) = y, then b^y = n
+
+Observe that lg n = log2 n = Θ(log10 n) (indeed a stronger
+statement could be made—the ratio between them is a constant! log2 n = log10 n
+ln 10 ); so, with Big-O or Θ or Ω notation, there is no real need to worry ln2
+about the base of logarithms—all versions are equally valid.
+
+|sin(n)|= O(1) -> 0<=|sin(n)|<=1
+|sin(n)| =! Θ(1) -> 0 <= k1 <= |sin(n)| <= k2 so k1=0, k2=1
+200 + sin(n) = Θ(1) -> 0 <= k1 <= 200+|sin(n)| <= k2 so 0<=k1<=200, k2>=201
+123456*n + 654321 = Θ(n) -> 0 <= k1*n <= 123456*n + 654321 <= k2*n, so k2 > 123456 >= k1 >= 0, N>654321/123456 
+
+Of course a loose upper bound is not as useful as a tight one: if f(n) = O(n2), then f(n) is also O(n5), but the latter doesn’t tell us as much. 
+If you can use big-Θ rather than big-O, your estimate is of course much more informative: not only your upper bound is tight, but it is also, simultaneously, a tight lower bound. You have completely characterized the growth rate of the target function.
