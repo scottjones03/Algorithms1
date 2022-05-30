@@ -1,2 +1,2 @@
-# Algorithms1
-Study of algorithms in mainly ocaml
+# Algorithms
+Study of algorithms and data structures in mainly ocaml
